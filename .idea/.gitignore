@@ -1,3 +1,7 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Ignore Android Studio IDE files
+.idea/
+*.iml
