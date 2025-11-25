@@ -2,16 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:padding="16dp">
+    
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:popupTheme="@style/ToolbarPopupMenu"
+        android:background="@color/toolbar_green"
+        app:titleTextColor="@color/white"
+        app:title="@string/app_title"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
         android:text="@string/my_res"
         android:textStyle="bold"
         android:textSize="18sp" />
@@ -26,6 +36,8 @@
     <Button
         android:id="@+id/addRestaurantBtn"
         android:text="@string/addRestaurantBtn"
+        style="@style/BtnStyle"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
