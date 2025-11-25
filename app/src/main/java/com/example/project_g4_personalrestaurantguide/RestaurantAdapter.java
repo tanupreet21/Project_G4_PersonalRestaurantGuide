@@ -1,9 +1,12 @@
 package com.example.project_g4_personalrestaurantguide;
 
+import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -18,6 +21,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     private List<Restaurant> restaurantList;
     private OnDeleteClickListener deleteClickListener;
+    private Context context;
 
     public interface OnDeleteClickListener {
         void onDeleteClick(int position);
@@ -46,15 +50,31 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.ratingBar.setRating(restaurant.getRating());
         holder.imageView.setImageResource(restaurant.getImageResId());
 
-        // Show delete button when user clicks on the card
+        // Initially hide delete button
+        holder.deleteBtn.setVisibility(View.INVISIBLE);
+
+        // Tap card -> open details/edit activity
         holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), RestaurantDetails.class);
+            intent.putExtra("restaurant_name", restaurant.getName());
+            intent.putExtra("restaurant_location", restaurant.getLocation());
+            intent.putExtra("restaurant_tags", restaurant.getTags());
+            intent.putExtra("restaurant_rating", restaurant.getRating());
+            intent.putExtra("restaurant_image", restaurant.getImageResId());
+            v.getContext().startActivity(intent);
+        });
+
+        // Long press - Show/hide delete button
+        holder.itemView.setOnLongClickListener(v -> {
             if (holder.deleteBtn.getVisibility() == View.INVISIBLE) {
                 holder.deleteBtn.setVisibility(View.VISIBLE);
             } else {
                 holder.deleteBtn.setVisibility(View.INVISIBLE);
             }
+            return true; //Consume long press
         });
 
+        // Delete Button click - remove restaurant
         holder.deleteBtn.setOnClickListener(v -> {
             if (deleteClickListener != null) {
                 deleteClickListener.onDeleteClick(position);
@@ -64,6 +84,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     @Override
     public int getItemCount() {
+
         return restaurantList.size();
     }
 
