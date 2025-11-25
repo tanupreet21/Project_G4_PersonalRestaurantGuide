@@ -3,4 +3,12 @@
     <string name="app_title">Personal Restaurant Guide</string>
     <string name="app_subtitle">\"Your personal restaurant diary\"</string>
     <string name="app_copyright">© 2025 Personal Restaurant Guide</string>
+    <string name="my_res">My restaurants:</string>
+    <string name="addRestaurantBtn">Add restaurant</string>
+    <string name="restaurantName">Restaurant Name</string>
+    <string name="tags">Tags:</string>
+    <string name="location">Location</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="about">About</string>
 </resources>
