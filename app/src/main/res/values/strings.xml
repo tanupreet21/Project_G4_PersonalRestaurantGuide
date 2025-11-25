@@ -6,6 +6,7 @@
     <string name="my_res">My restaurants:</string>
     <string name="addRestaurantBtn">Add restaurant</string>
     <string name="restaurantName">Restaurant Name</string>
-    <string name="tags">Tags: Type Location</string>
+    <string name="tags">Tags:</string>
+    <string name="location">Location</string>
     <string name="delete">Delete</string>
 </resources>
