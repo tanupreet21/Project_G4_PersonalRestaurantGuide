@@ -5,16 +5,192 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".RestaurantDetails">
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/toolbar_green"
-        app:titleTextColor="@color/white"
-        app:popupTheme="@style/ToolbarPopupMenu"
-        app:title="@string/app_title"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_green"
+        app:title="Restaurant Details"
+        app:titleTextColor="@android:color/white" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Restaurant Image -->
+            <TextView
+                android:id="@+id/imagePlaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center"
+                android:text="Restaurant Image"
+                android:textSize="14sp"
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp" />
+
+            <!-- EDIT Button -->
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDIT"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:background="@color/toolbar_green"
+                android:textColor="@android:color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- Description Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Description Box -->
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="13sp"
+                android:text="Restaurant description here..."
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Tags Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tags"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Tags Row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="14dp">
+
+                <Button
+                    android:id="@+id/tagThai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X Thai"
+                    android:textSize="12sp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@android:color/darker_gray" />
+
+                <Space
+                    android:layout_width="6dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/buttonAddTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Tag"
+                    android:textSize="12sp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <!-- Rating -->
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Address Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Address Box -->
+            <TextView
+                android:id="@+id/textAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:padding="8dp"
+                android:text="Restaurant address here..."
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Map & Directions Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/buttonShowMap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SHOW ON MAP"
+                    android:textSize="12sp"
+                    android:background="@color/toolbar_green"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/buttonDirections"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GET DIRECTIONS"
+                    android:textSize="12sp"
+                    android:background="@color/toolbar_green"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+            <!-- SHARE Button -->
+            <Button
+                android:id="@+id/buttonShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SHARE"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
