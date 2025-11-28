@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MapActivity extends AppCompatActivity {
+public class MapActivity extends BaseActivity {
 
     private Button btnGetDirections;
     private Toolbar toolbar;
@@ -18,16 +18,9 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        // Initialize views
-        toolbar = findViewById(R.id.toolbar);
-        btnGetDirections = findViewById(R.id.btn_get_directions);
+        setupToolbar("Map View", true);
 
-        // Set up toolbar
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
+        btnGetDirections = findViewById(R.id.btn_get_directions);
 
         // Set up Get Directions button
         btnGetDirections.setOnClickListener(v -> {
@@ -37,30 +30,4 @@ public class MapActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(android.view.Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            // Back button pressed
-            finish();
-            return true;
-        } else if (id == R.id.action_search) {
-            Intent intent = new Intent(MapActivity.this, SearchActivity.class);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.action_about) {
-            Intent intent = new Intent(MapActivity.this, AboutActivity.class);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

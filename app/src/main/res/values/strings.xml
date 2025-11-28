@@ -11,10 +11,7 @@
     <string name="delete">Delete</string>
     <string name="search">Search</string>
     <string name="about">About</string>
-    <string name="map_view_title">Map View</string>
     <string name="map_placeholder_description">Map showing restaurant location</string>
     <string name="get_directions">Get Directions</string>
-    <string name="back_button">Back to restaurant details</string>
-    <string name="menu_more">More options</string>
 
 </resources>

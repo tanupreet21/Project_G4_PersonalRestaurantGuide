@@ -1,44 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/toolbar_green"
+        app:popupTheme="@style/ToolbarPopupMenu"
+        app:titleTextColor="@color/white"
+        app:title="@string/app_title" />
 
     <!-- Map Placeholder Image (Full Screen) -->
     <ImageView
         android:id="@+id/map_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         android:src="@drawable/map_placeholder"
-        android:scaleType="centerCrop"/>
-
-    <!-- Semi-transparent Overlay for Toolbar Area -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#CC4CAF50"
-        android:elevation="4dp"/>
-
-    <!-- Top Navigation Bar (Transparent) -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent"
-        android:elevation="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Map View"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:shadowColor="#000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="3"/>
-    </androidx.appcompat.widget.Toolbar>
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/map_placeholder_description"
+        />
 
     <!-- Get Directions Button -->
     <Button
@@ -48,7 +34,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:background="@color/toolbar_green"
-        android:text="Get Directions"
+        android:text="@string/get_directions"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"/>
