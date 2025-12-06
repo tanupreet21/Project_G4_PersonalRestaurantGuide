@@ -1,10 +1,11 @@
 package com.example.project_g4_personalrestaurantguide;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -18,22 +19,26 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        // Initialize views
         toolbar = findViewById(R.id.toolbar);
         btnGetDirections = findViewById(R.id.btn_get_directions);
 
-        // Set up toolbar
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
-        // Set up Get Directions button
         btnGetDirections.setOnClickListener(v -> {
-            Toast.makeText(MapActivity.this,
-                    "Opening Google Maps for directions...",
-                    Toast.LENGTH_SHORT).show();
+            double latitude = 40.748817;
+            double longitude = -73.985428;
+
+            Uri uri = Uri.parse(
+                    "https://www.google.com/maps/dir/?api=1&destination="
+                            + latitude + "," + longitude
+            );
+
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
     }
 
@@ -48,7 +53,6 @@ public class MapActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            // Back button pressed
             finish();
             return true;
         } else if (id == R.id.action_search) {

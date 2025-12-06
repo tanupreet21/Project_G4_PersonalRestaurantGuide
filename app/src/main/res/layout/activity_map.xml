@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Map Placeholder Image (Full Screen) -->
     <ImageView
         android:id="@+id/map_image"
         android:layout_width="match_parent"
@@ -11,14 +10,12 @@
         android:src="@drawable/map_placeholder"
         android:scaleType="centerCrop"/>
 
-    <!-- Semi-transparent Overlay for Toolbar Area -->
     <View
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#CC4CAF50"
         android:elevation="4dp"/>
 
-    <!-- Top Navigation Bar (Transparent) -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -40,7 +37,6 @@
             android:shadowRadius="3"/>
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Get Directions Button -->
     <Button
         android:id="@+id/btn_get_directions"
         android:layout_width="match_parent"
