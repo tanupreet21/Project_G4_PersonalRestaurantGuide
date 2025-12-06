@@ -1,198 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="12dp"
     tools:context=".AddEditRestaurantActivity">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/toolbar_green"
-        app:titleTextColor="@color/white"
-        app:popupTheme="@style/ToolbarPopupMenu"
-        app:title="@string/app_title" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="16dp">
 
+        <!-- Top image -->
+        <ImageView
+            android:id="@+id/imageRestaurant"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/img"
+            android:layout_marginBottom="16dp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        <!-- Name -->
+        <TextView
+            android:text="Name"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:background="#E0E0E0"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:hint="Enter restaurant name" />
 
-            <!-- Name -->
-            <TextView
-                android:id="@+id/labelName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp" />
+        <!-- Address -->
+        <TextView
+            android:text="Address"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/editName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:padding="10dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/editAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:hint="Enter address" />
 
-            <!-- Address -->
-            <TextView
-                android:id="@+id/labelAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp" />
+        <!-- Phone -->
+        <TextView
+            android:text="Phone"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/editAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Address"
-                android:padding="10dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:inputType="phone"
+            android:layout_marginBottom="12dp"
+            android:hint="Enter phone number" />
 
-            <!-- Phone -->
-            <TextView
-                android:id="@+id/labelPhone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp" />
+        <!-- Description -->
+        <TextView
+            android:text="Description"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/editPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Phone"
-                android:inputType="phone"
-                android:padding="10dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/editDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:background="#E0E0E0"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:hint="Enter a brief description" />
 
-            <!-- Description -->
-            <TextView
-                android:id="@+id/labelDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp" />
+        <!-- Tags -->
+        <TextView
+            android:text="Tags"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/editDescription"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:gravity="top|start"
-                android:hint="Enter a brief description"
-                android:inputType="textMultiLine"
-                android:padding="10dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/editTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:hint="Example: coffee,lunch,bbq" />
 
-            <!-- Tags -->
-            <TextView
-                android:id="@+id/labelTags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tags"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp" />
+        <!-- Rating -->
+        <TextView
+            android:text="Rating"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="12dp">
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"
+            android:layout_marginBottom="16dp"
+            android:progressTint="@color/toolbar_green"
+            android:secondaryProgressTint="@color/toolbar_green"
+            android:indeterminateTint="@color/toolbar_green" />
 
-                <Button
-                    android:id="@+id/buttonTagSample"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="X Thai"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:background="@android:color/darker_gray" />
+        <!-- Buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
-                <Space
-                    android:layout_width="8dp"
-                    android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="SAVE"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_rounded"
+                android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonAddTag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Tag"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:background="@android:color/darker_gray" />
-            </LinearLayout>
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content" />
 
-            <!-- Rating -->
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:stepSize="1"
-                android:layout_marginBottom="24dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/buttonSave"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="SAVE"
-                    android:textAllCaps="true"
-                    android:padding="12dp"
-                    android:background="#4CAF50"
-                    android:textColor="@android:color/white" />
-
-                <Space
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content" />
-
-                <Button
-                    android:id="@+id/buttonCancel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="CANCEL"
-                    android:textAllCaps="true"
-                    android:padding="12dp"
-                    android:background="#E0E0E0"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="CANCEL"
+                android:textColor="@android:color/black"
+                android:background="@drawable/button_rounded_gray"
+                android:textStyle="bold" />
 
         </LinearLayout>
-    </ScrollView>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

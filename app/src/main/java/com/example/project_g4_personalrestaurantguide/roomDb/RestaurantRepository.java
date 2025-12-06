@@ -12,6 +12,7 @@ public class RestaurantRepository {
 
     private final RestaurantDao restaurantDao;
     private final LiveData<List<Restaurant>> allRestaurants;
+
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public RestaurantRepository(Application app){
@@ -33,7 +34,7 @@ public class RestaurantRepository {
     }
 
     public void delete(Restaurant r){
-        executor.execute(()-> restaurantDao.delete(r));
+        executor.execute(() -> restaurantDao.delete(r));
     }
 
     public LiveData<List<Restaurant>> searchByName(String query){
@@ -42,5 +43,10 @@ public class RestaurantRepository {
 
     public LiveData<List<Restaurant>> searchByTag(String tag){
         return restaurantDao.searchByTag(tag);
+    }
+
+    // 🔥 Add/Edit/Details 화면에서 가장 중요
+    public LiveData<Restaurant> getById(int id) {
+        return restaurantDao.getById(id);
     }
 }

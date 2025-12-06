@@ -42,4 +42,9 @@ public class RestaurantViewModel extends AndroidViewModel {
     public LiveData<List<Restaurant>> searchByTag(String tag){
         return repository.searchByTag(tag);
     }
+
+    // 🔥 반드시 필요: Details & AddEdit에서 사용
+    public LiveData<Restaurant> getRestaurantById(int id){
+        return repository.getById(id);
+    }
 }
